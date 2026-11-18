@@ -45,7 +45,7 @@ s = load_dataset("hisashi-ito/longmemeval-ja", "s", split="train")
 | Config | Questions | History per question | Size | Corresponding original |
 |---|---|---|---|---|
 | `oracle` | 500 | Evidence sessions only | 13 MB | `longmemeval_oracle` |
-| `s` | 500 | Evidence sessions mixed into about 48 unrelated sessions (median 518 turns, about 200k Japanese characters) | 287 MB | `longmemeval_s_cleaned` |
+| `s` (small) | 500 | Evidence sessions mixed into about 48 unrelated sessions (median 518 turns, about 200k Japanese characters) | 287 MB | `longmemeval_s_cleaned` |
 
 Scores on `oracle` must not be reported as LongMemEval scores, because `oracle` does not include finding the evidence in a long history.
 

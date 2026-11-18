@@ -25,7 +25,7 @@ This repository holds the scripts that build the dataset, the instructions given
 | Unrelated session | A session unrelated to the question, mixed in to bury the evidence in the history |
 | Abstention question | A question that tests whether the assistant notices the history has no answer and declines to answer |
 | Oracle version | The version whose history for each question consists of evidence sessions only |
-| S version | The version that mixes the evidence sessions into unrelated sessions; each history has about 48 sessions |
+| S version | The version that mixes the evidence sessions into unrelated sessions; each history has about 48 sessions. S stands for small; the original LongMemEval also has an M (medium) version with about 500 sessions, which is not remade here |
 
 ## Why a remake, not a translation
 

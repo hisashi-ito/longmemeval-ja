@@ -24,7 +24,7 @@ s = load_dataset("hisashi-ito/longmemeval-ja", "s", split="train")
 | 版 | 問題数 | 1 問あたりの履歴 | 大きさ | 対応する元の版 |
 |---|---|---|---|---|
 | `oracle` | 500 | 根拠の会話だけ | 13MB | `longmemeval_oracle` |
-| `s` | 500 | 根拠の会話を、約 48 本の関係ない会話に混ぜたもの。発言は中央値で 518 個、日本語で約 20 万字 | 287MB | `longmemeval_s_cleaned` |
+| `s`(small) | 500 | 根拠の会話を、約 48 本の関係ない会話に混ぜたもの。発言は中央値で 518 個、日本語で約 20 万字 | 287MB | `longmemeval_s_cleaned` |
 
 `oracle` には、長い履歴の中から根拠を探す部分がありません。そのため、`oracle` の点数を LongMemEval の点数として報告しないでください。
 
