@@ -1,10 +1,17 @@
-<div align="center">
+<p align="center">
   <img src="./assets/longmemeval-ja_logo.png" alt="LongMemEval-JA" width="80%" />
-  <br/>
-  <strong>An unofficial Japanese remake of LongMemEval, adapted to everyday life in Japan</strong>
-  <br/>
-  <strong>English</strong> | <a href="./README_ja.md">日本語</a>
-</div>
+</p>
+
+<p align="center"><strong>An unofficial Japanese remake of LongMemEval, adapted to everyday life in Japan</strong></p>
+
+<p align="center">
+  <a href="https://huggingface.co/datasets/hisashi-ito/longmemeval-ja"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow" alt="Hugging Face Dataset" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  <a href="https://arxiv.org/abs/2410.10813"><img src="https://img.shields.io/badge/LongMemEval-arXiv%3A2410.10813-b31b1b.svg" alt="LongMemEval arXiv" /></a>
+  <img src="https://img.shields.io/badge/Language-Japanese-red.svg" alt="Language: Japanese" />
+</p>
+
+<p align="center"><strong>English</strong> | <a href="./README_ja.md">日本語</a></p>
 
 A Japanese remake of [LongMemEval](https://github.com/xiaowu0162/LongMemEval) (Wu et al., ICLR 2025), a benchmark for the long-term memory of chat assistants, adapted to everyday life in Japan. This is not an official release by the LongMemEval authors.
 

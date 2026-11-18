@@ -1,10 +1,17 @@
-<div align="center">
+<p align="center">
   <img src="./assets/longmemeval-ja_logo.png" alt="LongMemEval-JA" width="80%" />
-  <br/>
-  <strong>LongMemEval を日本の暮らしに合わせて作り直した、非公式の日本語版</strong>
-  <br/>
-  <a href="./README.md">English</a> | <strong>日本語</strong>
-</div>
+</p>
+
+<p align="center"><strong>LongMemEval を日本の暮らしに合わせて作り直した、非公式の日本語版</strong></p>
+
+<p align="center">
+  <a href="https://huggingface.co/datasets/hisashi-ito/longmemeval-ja"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow" alt="Hugging Face Dataset" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  <a href="https://arxiv.org/abs/2410.10813"><img src="https://img.shields.io/badge/LongMemEval-arXiv%3A2410.10813-b31b1b.svg" alt="LongMemEval arXiv" /></a>
+  <img src="https://img.shields.io/badge/Language-Japanese-red.svg" alt="Language: Japanese" />
+</p>
+
+<p align="center"><a href="./README.md">English</a> | <strong>日本語</strong></p>
 
 チャットアシスタントの長期記憶を測るベンチマーク [LongMemEval](https://github.com/xiaowu0162/LongMemEval) (Wu et al., ICLR 2025)を、日本の暮らしに合わせて日本語で作り直しました。LongMemEval の著者による公式の版ではありません。
 
