@@ -1,0 +1,70 @@
+common:
+  # 元のデータ(英語、oracle 版)。根拠の会話だけを持つ
+  source: data/raw/longmemeval_oracle.json
+  out_dir: out
+  # 鍵は環境変数 ANTHROPIC_API_KEY で渡す。手元の .env から読むときは、その道筋を環境変数 LMEJA_KEY_FILE で渡す
+  # (道筋はリポジトリに書かない)
+
+trial:
+  # 試しに作り直す問題の数を、問題の種類ごとに決める(合わせて 20 問)
+  per_type:
+    temporal-reasoning: 4
+    multi-session: 4
+    knowledge-update: 3
+    single-session-user: 3
+    single-session-assistant: 3
+    single-session-preference: 3
+  # このうち、答えない判断の問題(番号の末尾が _abs)を何問入れるか
+  abstention: 2
+  seed: 20261118
+
+localize:
+  model: claude-sonnet-5-5
+  effort: medium
+  max_tokens: 64000
+  # バッチの終わりを待つ間隔(秒)
+  poll_seconds: 60
+
+haystack:
+  # S 版(履歴に挟まる会話を含む版)。骨組み(会話の本数、日付、根拠の位置)と、訳す会話をここから取る
+  source: data/raw/longmemeval_s_cleaned.json
+  model: claude-haiku-5-5
+  effort: low
+  max_tokens: 32000
+  trial_count: 50
+  seed: 20261118
+  # この本数ずつのバッチに分け、1 本が終わってから次を出す(2026-11-18、依頼者「100 か 500 ずつ」)
+  chunk: 500
+
+scratch:
+  # ShareGPT の位置に入れる、日本語でゼロから書く会話
+  model: claude-haiku-5-5
+  effort: low
+  max_tokens: 32000
+  topic_model: claude-sonnet-5-5
+  # 英語 1 字あたりの日本語のおおよその字数(長さをそろえるため)
+  # 試しの 20 本は 0.4 で目安の 0.67 倍しか書かなかったので、1.5 倍に上げた
+  ja_chars_per_en_char: 0.6
+  # 発言の数の上限(ShareGPT には 100 を超える会話がまれにある)
+  max_turns: 24
+  trial_count: 20
+  trial_categories: 12
+  trial_per_category: 10
+  seed: 20261118
+  # ShareGPT の会話から話題を取り出すときに渡す、頭の部分の文字数
+  hint_head_chars: 3000
+
+verify:
+  solve_model: claude-opus-5-5
+  solve_effort: high
+  judge_model: claude-haiku-5-5
+  # 英語と日本語で判定が分かれた問題だけを、判定し直すモデル
+  rejudge_model: claude-fable-5-2
+
+safety:
+  # ShareGPT の位置に書いた会話の、有害な中身の判定
+  model: claude-haiku-5-5
+  # 判定とは別に、元の依頼がはっきり有害だったので、書いた会話が断っていても話題を替える位置(キーワードで見つけて目で確かめた)
+  replace_slots: [sharegpt_uD7CBng_2, sharegpt_uD7CBng_3, sharegpt_uD7CBng_4, sharegpt_uD7CBng_20, sharegpt_uD7CBng_30,
+                  sharegpt_E5eryzD_5, sharegpt_YcgkniJ_0, sharegpt_lSeiu11_0, sharegpt_13VyV6c_0, sharegpt_K6HY8Q4_63,
+                  sharegpt_xp3Y23H_0, sharegpt_Wi7Op1u_76]

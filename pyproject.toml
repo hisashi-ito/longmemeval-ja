@@ -1,0 +1,24 @@
+[project]
+name = "longmemeval-ja"
+version = "0.1.0"
+description = "LongMemEval を日本の暮らしに置き換えて作り直す(非公式)"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.70",
+    "datasets>=5.2.0",
+    "huggingface-hub>=2.4.0",
+    "pyyaml>=6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lmeja"]
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.2",
+]
